@@ -1,0 +1,60 @@
+name: Autograding Tests
+on:
+  - push
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Verification file exists
+        id: verification-file-exists
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Verification file exists
+          setup-command: ''
+          command: test -f verification_result.json
+          timeout: 10
+          max-score: 25
+      - name: Verification file is valid JSON
+        id: verification-file-is-valid-json
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Verification file is valid JSON
+          setup-command: ''
+          command: python3 -c "import json; json.load(open('verification_result.json'))"
+          timeout: 10
+          max-score: 25
+      - name: Student name is filled in
+        id: student-name-is-filled-in
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Student name is filled in
+          setup-command: ''
+          command: python3 -c "import json; data = json.load(open('verification_result.json')); assert data['student_name'] != 'REPLACE_WITH_YOUR_NAME', 'Student name not filled in'"
+          timeout: 10
+          max-score: 25
+      - name: Verification passed
+        id: verification-passed
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Verification passed
+          setup-command: ''
+          command: python3 -c "import json; data = json.load(open('verification_result.json')); assert data['verification_passed'] == True, 'Verification did not pass'"
+          timeout: 10
+          max-score: 25
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          VERIFICATION-FILE-EXISTS_RESULTS: "${{steps.verification-file-exists.outputs.result}}"
+          VERIFICATION-FILE-IS-VALID-JSON_RESULTS: "${{steps.verification-file-is-valid-json.outputs.result}}"
+          STUDENT-NAME-IS-FILLED-IN_RESULTS: "${{steps.student-name-is-filled-in.outputs.result}}"
+          VERIFICATION-PASSED_RESULTS: "${{steps.verification-passed.outputs.result}}"
+        with:
+          runners: verification-file-exists,verification-file-is-valid-json,student-name-is-filled-in,verification-passed

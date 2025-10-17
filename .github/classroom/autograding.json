@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Verification file exists",
+      "setup": "",
+      "run": "test -f verification_result.json",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Verification file is valid JSON",
+      "setup": "",
+      "run": "python3 -c \"import json; json.load(open('verification_result.json'))\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Student name is filled in",
+      "setup": "",
+      "run": "python3 -c \"import json; data = json.load(open('verification_result.json')); assert data['student_name'] != 'REPLACE_WITH_YOUR_NAME', 'Student name not filled in'\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Verification passed",
+      "setup": "",
+      "run": "python3 -c \"import json; data = json.load(open('verification_result.json')); assert data['verification_passed'] == True, 'Verification did not pass'\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    }
+  ]
+}
