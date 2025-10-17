@@ -140,13 +140,4 @@ If you have trouble pushing to GitHub, you may need to set up authentication:
 
 ## Questions?
 
-Contact the instructor or post on the course discussion forum.
-
-## Grading
-
-- [ ] Conda environment created successfully (20%)
-- [ ] All packages installed correctly (40%)
-- [ ] verification_result.json contains student name (10%)
-- [ ] verification_result.json committed and pushed to GitHub (30%)
-
-**Total: 100 points**
+If you run into any issues or have questions, contact Ian at: **icanderson@ucdavis.edu**
