@@ -39,6 +39,8 @@ We recommend installing the GitHub CLI for easier GitHub integration:
 ### Basic Command Line Familiarity
 You should be comfortable navigating directories and running commands in a terminal.
 
+Here is a popular GitHub and command line tutorial video: https://www.youtube.com/watch?v=HVsySz-h9r4
+
 ## Instructions
 
 ### Step 1: Install Anaconda (or Alternative)
