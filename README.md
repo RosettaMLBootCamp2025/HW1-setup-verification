@@ -1,7 +1,5 @@
 # HW1: Environment Setup & GitHub Basics
 
-**Due Date:** [Instructor will specify]
-
 ## Overview
 
 This assignment ensures you have properly set up your development environment and can use GitHub for version control. By completing this assignment, you will:
