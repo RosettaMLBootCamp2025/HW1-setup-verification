@@ -29,24 +29,7 @@ Verify installation by running:
 conda --version
 ```
 
-### Step 2: Configure the RosettaCommons Conda Channel
-
-PyRosetta requires a special conda channel. Add it to your conda configuration:
-
-```bash
-conda config --add channels https://conda.rosettacommons.org
-conda config --add channels conda-forge
-```
-
-Alternatively, you can manually edit your `~/.condarc` file to include:
-```yaml
-channels:
-  - https://conda.rosettacommons.org
-  - conda-forge
-  - defaults
-```
-
-### Step 3: Create the Conda Environment
+### Step 2: Create the Conda Environment
 
 In the directory containing this README, run:
 
@@ -56,7 +39,7 @@ conda env create -f environment.yml
 
 This will create an environment named `bootcamp2025_HW1` with all required packages:
 - Python 3.11
-- PyRosetta (for protein structure manipulation)
+- PyRosetta (for protein structure manipulation - channels configured in environment.yml)
 - NumPy (numerical computing)
 - Pandas (data analysis)
 - Matplotlib & Seaborn (visualization)
@@ -65,7 +48,9 @@ This will create an environment named `bootcamp2025_HW1` with all required packa
 - scikit-learn (machine learning)
 - Biopython (bioinformatics tools)
 
-### Step 4: Activate the Environment
+**Note:** The environment.yml file includes the RosettaCommons conda channel, so you don't need to configure it manually.
+
+### Step 3: Activate the Environment
 
 ```bash
 conda activate bootcamp2025_HW1
@@ -73,7 +58,7 @@ conda activate bootcamp2025_HW1
 
 You should see `(bootcamp2025_HW1)` in your terminal prompt.
 
-### Step 5: Run the Verification Script
+### Step 4: Run the Verification Script
 
 ```bash
 python verify_setup.py
@@ -91,11 +76,11 @@ If all checks pass, you should see:
 
 If some checks fail, the script will provide guidance on what went wrong.
 
-### Step 6: Update the Verification File
+### Step 5: Update the Verification File
 
 Open `verification_result.json` in a text editor and replace `"REPLACE_WITH_YOUR_NAME"` with your actual name.
 
-### Step 7: Create Your HW1 Repository on GitHub
+### Step 6: Create Your HW1 Repository on GitHub
 
 1. Go to https://github.com
 2. Click the "+" icon in the top right and select "New repository"
@@ -104,7 +89,7 @@ Open `verification_result.json` in a text editor and replace `"REPLACE_WITH_YOUR
 5. Do **NOT** initialize with README, .gitignore, or license
 6. Click "Create repository"
 
-### Step 8: Initialize Git and Push Your Verification
+### Step 7: Initialize Git and Push Your Verification
 
 In the directory containing `verification_result.json`, run:
 
@@ -128,7 +113,7 @@ git push -u origin main
 
 **Replace `YOUR_USERNAME` with your actual GitHub username!**
 
-### Step 9: Verify Your Submission
+### Step 8: Verify Your Submission
 
 Go to your GitHub repository at `https://github.com/YOUR_USERNAME/HW1` and verify that:
 - The `verification_result.json` file is present
@@ -144,9 +129,10 @@ Submit the URL to your HW1 GitHub repository (e.g., `https://github.com/YOUR_USE
 ### PyRosetta Installation Issues
 
 If PyRosetta fails to install:
-1. Verify the RosettaCommons channel is configured: `conda config --show channels`
-2. Try installing PyRosetta separately: `conda install -c https://conda.rosettacommons.org pyrosetta`
-3. Check that you're using a compatible Python version (3.11 is specified in environment.yml)
+1. Make sure you're using the environment.yml file which includes the RosettaCommons channel
+2. Try creating the environment again with verbose output: `conda env create -f environment.yml --verbose`
+3. If that fails, try installing PyRosetta separately: `conda install -c https://conda.rosettacommons.org pyrosetta`
+4. Check that you're using a compatible Python version (3.11 is specified in environment.yml)
 
 ### Import Errors
 
