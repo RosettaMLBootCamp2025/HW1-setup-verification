@@ -9,6 +9,10 @@ This assignment ensures you have properly set up your development environment an
 3. Verify your installation with a Python script
 4. Commit and push your verification results to GitHub
 
+## About Autograding
+
+**Note:** This assignment has automated tests that run when you push your code. You'll see a score out of 100 points. **These points are just for feedback** - they help you know if you've completed everything correctly. This is a bootcamp focused on learning, not grades!
+
 ## Prerequisites
 
 ### GitHub Account
