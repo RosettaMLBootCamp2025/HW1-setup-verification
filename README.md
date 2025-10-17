@@ -11,9 +11,33 @@ This assignment ensures you have properly set up your development environment an
 
 ## Prerequisites
 
-- A GitHub account
-- Basic command line familiarity
-- Git installed on your computer
+### GitHub Account
+If you don't have a GitHub account yet, create one at: https://github.com/signup
+
+### Git Installation
+
+**Mac Users:**
+Install Xcode Command Line Tools, which includes git:
+```bash
+xcode-select --install
+```
+This will open a dialog to install the command line developer tools. Once installed, you'll have git available.
+
+**Windows/Linux Users:**
+Download and install git from: https://git-scm.com/downloads
+
+Verify git is installed by running:
+```bash
+git --version
+```
+
+### GitHub CLI (Recommended)
+We recommend installing the GitHub CLI for easier GitHub integration:
+- Installation instructions: https://cli.github.com/
+- After installing, authenticate with: `gh auth login`
+
+### Basic Command Line Familiarity
+You should be comfortable navigating directories and running commands in a terminal.
 
 ## Instructions
 
