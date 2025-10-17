@@ -9,7 +9,7 @@ This assignment ensures you have properly set up your development environment an
 1. Install Anaconda (if not already installed)
 2. Create a conda environment with all required packages for the bootcamp
 3. Verify your installation with a Python script
-4. Create a GitHub repository and commit your verification results
+4. Commit and push your verification results to GitHub
 
 ## Prerequisites
 
@@ -80,49 +80,31 @@ If some checks fail, the script will provide guidance on what went wrong.
 
 Open `verification_result.json` in a text editor and replace `"REPLACE_WITH_YOUR_NAME"` with your actual name.
 
-### Step 6: Create Your HW1 Repository on GitHub
+### Step 6: Commit and Push Your Verification
 
-1. Go to https://github.com
-2. Click the "+" icon in the top right and select "New repository"
-3. Name the repository **exactly** `HW1`
-4. Make it **private** (or public if you prefer)
-5. Do **NOT** initialize with README, .gitignore, or license
-6. Click "Create repository"
-
-### Step 7: Initialize Git and Push Your Verification
-
-In the directory containing `verification_result.json`, run:
+Now that you have your verification file, commit and push it to your GitHub Classroom repository:
 
 ```bash
-# Initialize a git repository
-git init
-
 # Add the verification file
 git add verification_result.json
 
-# Create your first commit
+# Create your commit
 git commit -m "Add environment verification"
 
-# Add your GitHub repository as the remote (replace YOUR_USERNAME)
-git remote add origin https://github.com/YOUR_USERNAME/HW1.git
-
 # Push to GitHub
-git branch -M main
-git push -u origin main
+git push
 ```
 
-**Replace `YOUR_USERNAME` with your actual GitHub username!**
+### Step 7: Verify Your Submission
 
-### Step 8: Verify Your Submission
-
-Go to your GitHub repository at `https://github.com/YOUR_USERNAME/HW1` and verify that:
+Go to your GitHub repository (the one created when you accepted the assignment) and verify that:
 - The `verification_result.json` file is present
 - It contains your name (not "REPLACE_WITH_YOUR_NAME")
 - The `verification_passed` field is `true`
 
 ## Submission
 
-Submit the URL to your HW1 GitHub repository (e.g., `https://github.com/YOUR_USERNAME/HW1`) through the course submission system.
+Your work is automatically submitted when you push to your GitHub Classroom repository. The instructor will be able to see your verification file and check that all requirements are met.
 
 ## Troubleshooting
 
@@ -165,7 +147,6 @@ Contact the instructor or post on the course discussion forum.
 - [ ] Conda environment created successfully (20%)
 - [ ] All packages installed correctly (40%)
 - [ ] verification_result.json contains student name (10%)
-- [ ] HW1 repository created on GitHub (10%)
-- [ ] verification_result.json committed and pushed (20%)
+- [ ] verification_result.json committed and pushed to GitHub (30%)
 
 **Total: 100 points**
