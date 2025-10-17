@@ -41,10 +41,19 @@ You should be comfortable navigating directories and running commands in a termi
 
 ## Instructions
 
-### Step 1: Install Anaconda
+### Step 1: Install Anaconda (or Alternative)
 
-If you don't already have Anaconda installed, download and install it from:
-https://www.anaconda.com/download
+**Note:** If you already have Miniconda, Miniforge, Mambaforge, or Mamba installed, you can use those instead - they all work with this assignment!
+
+**Option 1: Download Anaconda**
+Download and install from: https://www.anaconda.com/download
+
+**Option 2: Install via Homebrew (Mac users only)**
+If you have Homebrew installed:
+```bash
+brew install --cask anaconda
+```
+Then add conda to your PATH (follow the instructions shown after installation).
 
 Verify installation by running:
 ```bash
