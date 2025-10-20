@@ -66,9 +66,33 @@ Verify installation by running:
 conda --version
 ```
 
-### Step 2: Create the Conda Environment
+### Step 2: Clone Your GitHub Classroom Repository
 
-In the directory containing this README, run:
+When you accepted the GitHub Classroom assignment, a repository was created specifically for you. You need to clone this repository to your computer.
+
+**Finding your repository URL:**
+1. After accepting the assignment, you should see a link to your repository
+2. Go to your repository on GitHub
+3. Click the green "Code" button
+4. Copy the repository URL (HTTPS or SSH)
+
+**Clone the repository:**
+```bash
+# Replace YOUR_REPO_URL with your actual repository URL
+git clone YOUR_REPO_URL
+
+# Navigate into the cloned directory
+# (The directory name will match your repository name)
+cd HW1-setup-verification-YOUR_USERNAME
+```
+
+**Note:** Your repository URL will be unique to you and will look something like:
+- HTTPS: `https://github.com/YOUR_ORGANIZATION/HW1-setup-verification-YOUR_USERNAME.git`
+- SSH: `git@github.com:YOUR_ORGANIZATION/HW1-setup-verification-YOUR_USERNAME.git`
+
+### Step 3: Create the Conda Environment
+
+Now that you're in the repository directory (which contains this README and the environment.yml file), run:
 
 ```bash
 conda env create -f environment.yml
@@ -87,7 +111,7 @@ This will create an environment named `bootcamp2025_HW1` with all required packa
 
 **Note:** The environment.yml file includes the RosettaCommons conda channel, so you don't need to configure it manually.
 
-### Step 3: Activate the Environment
+### Step 4: Activate the Environment
 
 ```bash
 conda activate bootcamp2025_HW1
@@ -95,7 +119,7 @@ conda activate bootcamp2025_HW1
 
 You should see `(bootcamp2025_HW1)` in your terminal prompt.
 
-### Step 4: Run the Verification Script
+### Step 5: Run the Verification Script
 
 ```bash
 python verify_setup.py
@@ -113,11 +137,11 @@ If all checks pass, you should see:
 
 If some checks fail, the script will provide guidance on what went wrong.
 
-### Step 5: Update the Verification File
+### Step 6: Update the Verification File
 
 Open `verification_result.json` in a text editor and replace `"REPLACE_WITH_YOUR_NAME"` with your actual name.
 
-### Step 6: Commit and Push Your Verification
+### Step 7: Commit and Push Your Verification
 
 Now that you have your verification file, commit and push it to your GitHub Classroom repository:
 
@@ -132,7 +156,7 @@ git commit -m "Add environment verification"
 git push
 ```
 
-### Step 7: Verify Your Submission
+### Step 8: Verify Your Submission
 
 Go to your GitHub repository (the one created when you accepted the assignment) and verify that:
 - The `verification_result.json` file is present
