@@ -15,6 +15,36 @@ This assignment ensures you have properly set up your development environment an
 
 ## Prerequisites
 
+### Windows Users: Install WSL (Windows Subsystem for Linux)
+
+**IMPORTANT for Windows Users:** This bootcamp requires PyRosetta, which only runs on Unix-based systems (Linux/Mac). Windows users **must** use Windows Subsystem for Linux (WSL) to complete this assignment.
+
+**Install WSL:**
+
+1. Open PowerShell or Windows Command Prompt as Administrator (right-click and "Run as administrator")
+
+2. Install WSL with Ubuntu:
+   ```powershell
+   wsl --install
+   ```
+
+3. Restart your computer when prompted
+
+4. After restart, Ubuntu will automatically open and ask you to create a username and password. Remember these credentials!
+
+5. Update your WSL installation:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   ```
+
+**Using WSL:**
+- Launch Ubuntu from your Start menu, or type `wsl` in PowerShell/Command Prompt
+- All commands in this assignment should be run in the WSL Ubuntu terminal
+- Your Windows files are accessible at `/mnt/c/` (C: drive), `/mnt/d/` (D: drive), etc.
+- We recommend working in your Linux home directory: `cd ~`
+
+For more detailed WSL documentation, see: https://learn.microsoft.com/en-us/windows/wsl/install
+
 ### GitHub Account
 If you don't have a GitHub account yet, create one at: https://github.com/signup
 
@@ -27,8 +57,15 @@ xcode-select --install
 ```
 This will open a dialog to install the command line developer tools. Once installed, you'll have git available.
 
-**Windows/Linux Users:**
+**Windows Users (in WSL):**
+Git should be pre-installed in WSL Ubuntu. If not, install it with:
+```bash
+sudo apt install git
+```
+
+**Linux Users:**
 Download and install git from: https://git-scm.com/downloads
+Or use your distribution's package manager (e.g., `sudo apt install git` for Ubuntu/Debian)
 
 Verify git is installed by running:
 ```bash
@@ -51,8 +88,24 @@ Here is a popular GitHub and command line tutorial video: https://www.youtube.co
 
 **Note:** If you already have Miniconda, Miniforge, Mambaforge, or Mamba installed, you can use those instead - they all work with this assignment!
 
-**Option 1: Download Anaconda**
-Download and install from: https://www.anaconda.com/download
+**Option 1: Download Anaconda (Mac/Windows/Linux)**
+
+For Mac/Windows, download and install from: https://www.anaconda.com/download
+
+For Windows users in WSL, use the Linux installer:
+```bash
+# Download the Linux installer in WSL
+wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+
+# Run the installer
+bash Anaconda3-2024.10-1-Linux-x86_64.sh
+
+# Follow the prompts and accept the license
+# When asked to initialize conda, type 'yes'
+
+# Restart your terminal or run:
+source ~/.bashrc
+```
 
 **Option 2: Install via Homebrew (Mac users only)**
 If you have Homebrew installed:
